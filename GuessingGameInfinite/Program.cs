@@ -1,0 +1,44 @@
+﻿using System;
+
+namespace GuessingGameInfinite
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //programm genereerib juhusliku numbrit 1 kuni 10;
+            //kasutaja peab selle numbri ara arvama;
+            //kui kasutaja suutis numbri ara arvata, siis ta on mangu voitnud;
+            //katsete arv on piiramatu.
+            //*programm genereerib juhuslikku numbrit 1 korra.
+
+            Random rnd = new Random();
+            int cpuNumber = rnd.Next(1, 11);
+
+            bool cpu = false;
+
+            do
+            {
+
+                Console.WriteLine("Vali number ühest kümneni:");
+                string s = Console.ReadLine();
+
+                int i = int.Parse(s);
+
+                if (i != cpuNumber)
+                {
+                    Console.WriteLine("Vale number. Arva uuesti.");
+
+                }
+
+
+                else if (i == cpuNumber)
+                {
+                    Console.WriteLine("Võitsid- õige number!");
+                }
+
+            } while (cpu == false);
+        }
+
+    }
+}
